@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-400: #34d399;
+  --color-primary-500: #10b981; /* Professional Emerald Green */
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  --color-primary-900: #064e3b;
+  
+  --color-dark-bg: #090d16;    /* Premium dark blue-black */
+  --color-dark-card: #111827;  /* High contrast dark card */
+  --color-dark-border: #1f2937;/* Tight dark border */
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 transition-colors duration-300 antialiased;
+  }
+  
+  body.dark {
+    @apply bg-[var(--color-dark-bg)] text-slate-100;
+  }
+  
+  /* Fine-tune scrollbars for a clean look */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-50 dark:bg-[var(--color-dark-bg)];
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-slate-400 dark:hover:bg-slate-700;
+  }
+}
+
+@layer utilities {
+  /* High readability cards in light mode, sleek glass in dark mode */
+  .glass-card {
+    @apply bg-white border border-slate-200/80 shadow-lg shadow-slate-100/60 transition-all duration-300;
+  }
+  
+  .dark .glass-card {
+    @apply bg-[var(--color-dark-card)]/80 backdrop-blur-md border border-[var(--color-dark-border)] shadow-xl shadow-black/20 transition-all duration-300;
+  }
+  
+  /* Highly readable text gradients for both themes */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-700 to-teal-700;
+  }
+  
+  .dark .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-emerald-400;
+  }
+}
