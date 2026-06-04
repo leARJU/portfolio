@@ -19,7 +19,7 @@ const Footer = () => {
 
                     <div className="flex gap-4">
                         <a
-                            href="https://github.com/arjunps665"
+                            href="https://github.com/leARJU"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-3 bg-slate-800 rounded-full hover:bg-primary-600 hover:text-white transition-all duration-300"

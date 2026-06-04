@@ -43,7 +43,7 @@ const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
                     duration={500}
                     className="text-2xl font-bold text-gradient cursor-pointer hover:opacity-80 transition-opacity"
                 >
-                    Arjun.PS
+                    Arjun P S
                 </Link>
 
                 {/* Desktop Nav */}
